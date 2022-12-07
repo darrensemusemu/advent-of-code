@@ -3,6 +3,6 @@
 ## Quick Start
 
 ```console
-$ go run -v ./day1/...
+$ go test -v ./day1/...
 ```
 
