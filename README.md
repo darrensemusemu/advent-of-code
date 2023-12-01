@@ -1,10 +1,9 @@
-# Advent of Code 
+# Advent of Code
 
 ## Solutions
 
-### Project Structure
+Solutions are structure as:
 
-- `2022`: solutions for year 2022
-  - `c`: solutions written in C
-  - `go`: solutions wiritten in GO
+- [_year_]: solutions for year _year_
+  - [_lang_]: solutions written in _lang_
 
