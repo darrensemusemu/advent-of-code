@@ -11,7 +11,7 @@ pub fn main() !void {
     var file = try std.fs.cwd().openFile(args[1], .{});
     defer file.close();
 
-    var res = try parseSrc(alloc, file.reader());
+    var res = try parseSrc(alloc, file.reader(), Args{});
     try std.io.getStdOut().writer().print("result: {} ", .{res});
 }
 
@@ -19,8 +19,9 @@ const Args = struct {
     //
 };
 
-fn parseSrc(alloc: std.mem.Allocator, reader: anytype) !u32 {
+fn parseSrc(alloc: std.mem.Allocator, reader: anytype, args: Args) !u32 {
     _ = alloc;
+    _ = args;
 
     var res: u32 = 0;
 
