@@ -22,8 +22,7 @@ const Game = struct {
 };
 
 fn parseSrc(alloc: std.mem.Allocator, reader: anytype) !u32 {
-    var list = std.ArrayList(Game).init(alloc);
-    defer list.deinit();
+    _ = alloc;
 
     var res: u32 = 0;
     var buf: [1028]u8 = undefined;

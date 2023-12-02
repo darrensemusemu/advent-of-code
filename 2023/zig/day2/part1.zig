@@ -23,8 +23,7 @@ const Game = struct {
 };
 
 fn parseSrc(alloc: std.mem.Allocator, reader: anytype, r: u32, g: u32, b: u32) !u32 {
-    var list = std.ArrayList(Game).init(alloc);
-    defer list.deinit();
+    _ = alloc;
 
     var res: u32 = 0;
     var buf: [1028]u8 = undefined;
@@ -53,15 +52,12 @@ fn parseSrc(alloc: std.mem.Allocator, reader: anytype, r: u32, g: u32, b: u32) !
                 var color = item_iter.next().?;
 
                 if (std.mem.eql(u8, color, "red") and r < num) {
-                    try std.io.getStdErr().writer().print("nmm-{}<{}\n", .{ num, r });
                     game_num = 0;
                     break :inner1;
                 } else if (std.mem.eql(u8, color, "green") and g < num) {
-                    try std.io.getStdErr().writer().print("nmm-{}<{}\n", .{ num, r });
                     game_num = 0;
                     break :inner1;
                 } else if (std.mem.eql(u8, color, "blue") and b < num) {
-                    try std.io.getStdErr().writer().print("nmm-{}<{}\n", .{ num, r });
                     game_num = 0;
                     break :inner1;
                 }
